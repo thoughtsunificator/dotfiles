@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+import { Binding } from "domodel"
+
+/**
+ * @global
+ */
+class ${1:}Binding extends Binding {
+
+	onCreated() {
+
+	}
+
+}
+
+export default ${1:}Binding
+]]></content>
+	<tabTrigger>binding</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel binding</description>
+</snippet>

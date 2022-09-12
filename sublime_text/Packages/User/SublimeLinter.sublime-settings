@@ -1,0 +1,7 @@
+{
+	"linters": {
+		"json": {
+			"strict": true
+		}
+	}
+}

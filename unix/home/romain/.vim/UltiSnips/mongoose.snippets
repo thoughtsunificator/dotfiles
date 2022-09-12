@@ -1,0 +1,74 @@
+snippet mongo_create
+
+${1:Model}.create(req.body, function (err, collection) {
+	${3:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongo_deleteone
+
+${1:Model}.deleteOne({${2}}, function (err, collection) {
+	${3:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongo_findbyidandremove
+
+${1:Model}.findByIdAndRemove(${2:req.params.id}, ${3:req.body}, function (err, collection) {
+	${4:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongo_findbyidandupdate
+
+${1:Model}.findByIdAndUpdate(${2:req.params.id}, ${3:req.body}, function (err, collection) {
+	${4:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongo_findbyid
+
+${1:Model}.findById(${2:req.params.id}, function (err, collection) {
+	${3:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongo_findone
+
+${1:Model}.findOne({${2}}, function (err, collection) {
+	${3:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongo_find
+
+${1:Model}.find({${2}}, function (err, collection) {
+	${3:res.json(collection)}
+})
+
+endsnippet
+
+snippet mongoose_schema
+
+var mongoose = require('mongoose')
+
+module.exports = mongoose.model('${1:Collection}', new mongoose.Schema({  
+    ${1}
+}));
+
+endsnippet
+
+snippet mongo_updateone
+
+${1:Model}.updateOne({${2}}, ${3:req.body}, function (err, collection) {
+	${4:res.json(collection)}
+})
+
+endsnippet
+

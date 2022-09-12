@@ -1,0 +1,53 @@
+[
+	{ "keys": ["alt+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["alt+shift+down"], "command": "swap_line_down" },
+	{ "keys": ["ctrl+shift+x"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+up"], "command": "duplicate_lines", "args": { "up": true } },
+	{ "keys": ["ctrl+shift+down"], "command": "duplicate_lines", "args": { "up": false } },
+	{ "keys": ["ctrl+shift+r"], "command": "quick_file_move" },
+	{ "keys": ["ctrl+t"], "command": "new_file" },
+	{ "keys": ["pause"], "command": "cancel_build" },
+	{
+		"keys": ["ctrl+alt+shift+left"],
+		"command": "bh_key",
+		"args":
+		{
+			"no_outside_adj": null,
+			"no_block_mode": null,
+			"lines" : true,
+			"plugin":
+			{
+				"type": ["__all__"],
+				"command": "bh_modules.bracketselect",
+				"args": {"select": "left"}
+			}
+		}
+	},
+	{
+		"keys": ["ctrl+alt+shift+right"],
+		"command": "bh_key",
+		"args":
+		{
+			"no_outside_adj": null,
+			"no_block_mode": null,
+			"lines" : true,
+			"plugin":
+			{
+				"type": ["__all__"],
+				"command": "bh_modules.bracketselect",
+				"args": {"select": "right"}
+			}
+		}
+	},
+	{ "keys": ["ctrl++"], "command": "" },
+	{ "keys": ["ctrl+="], "command": "" },
+	{ "keys": ["ctrl+keypad_plus"], "command": "" },
+	{ "keys": ["ctrl+-"], "command": "" },
+	{ "keys": ["ctrl+keypad_minus"], "command": "" },
+	{ "keys": ["ctrl+equals"], "command": "" },
+	{ "keys": ["ctrl+shift+equals"], "command": "" },
+	{ "keys": ["ctrl+shift+keypad_plus"], "command": "" },
+	{ "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+	{ "keys": ["f2"], "command": "side_bar_move", "args": { "paths": [] } }
+]

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+const router = new Router([
+	new Route("/", MyViewModel, MyViewBinding),
+	new Route("/test", MyViewModel2, MyView2Binding)
+])
+
+Core.run(RouterModel, {
+	binding: new RouterBinding({ router }),
+	parentNode: document.body
+})
+]]></content>
+	<tabTrigger>domrouter</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel router</description>
+</snippet>

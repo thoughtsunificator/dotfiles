@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+import { EventListener } from "domodel"
+
+/**
+ * @global
+ */
+class ${1:}EventListener extends EventListener {
+
+}
+
+export default ${1:}EventListener
+
+]]></content>
+	<tabTrigger>domevent</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel event listener</description>
+</snippet>

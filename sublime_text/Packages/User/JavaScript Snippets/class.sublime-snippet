@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+/**
+ * @global
+ */
+class ${1:MyClass} {
+
+	/**
+	 * @param {${3:[type]}} ${2:field}
+	 */
+	constructor(${2:field}) {
+		this._${2:field} = ${2:field}
+	}
+
+	/**
+	 * @readonly
+	 * @type {${3:{type}}}
+	 */
+	get ${2:field}() {
+		return this._${2:field}
+	}
+
+}
+
+export default ${1:MyClass}
+
+]]></content>
+	<tabTrigger>class</tabTrigger>
+	<scope>source.js</scope>
+	<description>javascript class</description>
+</snippet>

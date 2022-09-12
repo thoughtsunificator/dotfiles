@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+{% extends 'layout.twig' %}
+
+{% block body %}
+${1}
+{% endblock %}
+
+]]></content>
+	<tabTrigger>base</tabTrigger>
+	<scope>text.html.twig</scope>
+</snippet>

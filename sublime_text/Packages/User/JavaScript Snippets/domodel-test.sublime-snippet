@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+import { expect } from '@esm-bundle/chai'
+import { Core, Binding } from "domodel"
+
+import { ${1:}Model, ${1:}Binding, ${1:} } from "../index.js"
+
+const RootModel = { tagName: "div" }
+let rootBinding
+
+describe("${1:}", () => {
+
+	it("setUp", () => {
+		rootBinding = new Binding()
+		Core.run(RootModel, { parentNode: document.body, binding: rootBinding })
+		callback()
+	})
+
+	it("tearDown", () => {
+		rootBinding.remove()
+		callback()
+	})
+
+	it("instance", () => {
+		assert.ok(new ${1:}Binding() instanceof Binding)
+	})
+
+	it("onCreated", () => {
+		const ${1/./\l$0/g} = new ${1:}()
+		const binding = new ${1:}Binding({ ${1/./\l$0/g} })
+		rootBinding.run(${1:}Model, { binding })
+	})
+
+})
+]]></content>
+	<tabTrigger>domtest</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel unit test</description>
+</snippet>

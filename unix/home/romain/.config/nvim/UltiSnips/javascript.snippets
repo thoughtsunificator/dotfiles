@@ -1,0 +1,224 @@
+snippet binding "domodel binding"
+
+import { Binding } from "domodel"
+
+/**
+ * @global
+ */
+class ${1:}Binding extends Binding {
+
+	onCreated() {
+
+	}
+
+}
+
+export default ${1:}Binding
+
+endsnippet
+
+snippet class "javascript class"
+
+/**
+ * @global
+ */
+class ${1:MyClass} {
+
+	/**
+	 * @param {${3:[type]}} ${2:field}
+	 */
+	constructor(${2:field}) {
+		this._${2:field} = ${2:field}
+	}
+
+	/**
+	 * @readonly
+	 * @type {${3:{type}}}
+	 */
+	get ${2:field}() {
+		return this._${2:field}
+	}
+
+}
+
+export default ${1:MyClass}
+
+
+endsnippet
+
+snippet domevent "domodel event listener"
+
+import { EventListener } from "domodel"
+
+/**
+ * @global
+ */
+class ${1:}EventListener extends EventListener {
+
+}
+
+export default ${1:}EventListener
+
+
+endsnippet
+
+snippet domliste "domodel listener"
+
+this.listen(${1:}, "${1:} ${2:}", data => {
+
+})
+
+endsnippet
+
+snippet domrouter "domodel router"
+
+const router = new Router([
+	new Route("/", MyViewModel, MyViewBinding),
+	new Route("/test", MyViewModel2, MyView2Binding)
+])
+
+Core.run(RouterModel, {
+	binding: new RouterBinding({ router }),
+	parentNode: document.body
+})
+
+endsnippet
+
+snippet domtestobject "domodel unit test"
+
+import { expect } from '@esm-bundle/chai'
+import ${1:} from "../index.js"
+
+describe("${1:}", () => {
+
+	it("instance", () => {
+
+	})
+
+})
+
+endsnippet
+
+snippet domtest "domodel unit test"
+
+import { expect } from '@esm-bundle/chai'
+import { Core, Binding } from "domodel"
+
+import { ${1:}Model, ${1:}Binding, ${1:} } from "../index.js"
+
+const RootModel = { tagName: "div" }
+let rootBinding
+
+describe("${1:}", () => {
+
+	it("setUp", () => {
+		rootBinding = new Binding()
+		Core.run(RootModel, { parentNode: document.body, binding: rootBinding })
+		callback()
+	})
+
+	it("tearDown", () => {
+		rootBinding.remove()
+		callback()
+	})
+
+	it("instance", () => {
+		assert.ok(new ${1:}Binding() instanceof Binding)
+	})
+
+	it("onCreated", () => {
+		const ${1/./\l$0/g} = new ${1:}()
+		const binding = new ${1:}Binding({ ${1/./\l$0/g} })
+		rootBinding.run(${1:}Model, { binding })
+	})
+
+})
+
+endsnippet
+
+snippet getset "es6 getter-setter"
+
+/**
+ * @type {${2:type}}
+ */
+get ${1:field}() {
+	return this._${1:field}
+}
+
+set ${1:field}(${1:field}) {
+	this._${1:field} = ${1:field}
+}
+
+endsnippet
+
+snippet get "es6 getter"
+
+/**
+ * @readonly
+ * @type {${2:type}}
+ */
+get ${1:field}() {
+	return this._${1:field}
+}
+
+endsnippet
+
+snippet modeldata "domodel model data"
+
+export { default as ${2:Model}Binding } from "./${2/./\l$0/g}.binding"
+
+export default data => ({
+	tagName: "${1:div}"
+})
+
+endsnippet
+
+snippet model "domodel model"
+
+export { default as ${2:Model}Binding } from "./${2/./\l$0/g}.binding"
+
+export default {
+	tagName: "${1:div}"
+}
+
+endsnippet
+
+snippet observable "domodel observable"
+
+import { Observable } from "domodel"
+
+/**
+ * @global
+ */
+class ${1:MyClass} extends Observable {
+
+	/**
+	 * @param {${3:[type]}} ${2:field}
+	 */
+	constructor(${2:field}) {
+		super()
+		this._${2:field} = ${2:field}
+	}
+
+	/**
+	 * @type {${3:[type]}}
+	 */
+	get ${2:field}() {
+		return this._${2:field}
+	}
+
+}
+
+export default ${1:MyClass}
+
+
+endsnippet
+
+snippet set "es6 setter"
+
+set ${1:field}(${1:field}) {
+	this._${1:field} = ${1:field}
+}
+
+endsnippet
+

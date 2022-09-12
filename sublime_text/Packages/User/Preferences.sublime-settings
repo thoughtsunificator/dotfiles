@@ -1,0 +1,71 @@
+{
+	"auto_match_enabled": false,
+	"binary_file_patterns":
+	[
+		"node_modules/"
+	],
+	"remember_workspace": true,
+	"hot_exit": false,
+	"remember_open_files": true,
+	"close_windows_when_empty": false,
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"default_line_ending": "unix",
+	"detect_indentation": false,
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"drag_text": false,
+	"goto_anything_exclude_gitignore": true,
+	"ensure_newline_at_eof_on_save": true,
+	"find_selected_text": false,
+	"dont_index_ignored_git_files": true,
+	"exclude_ignored_git_files": false,
+	"file_exclude_patterns": [
+		"composer.lock",
+		"*.log",
+		"*.sql",
+		"package-lock.json",
+		"/srv/pachinko/.env.json",
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules"
+	],
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"AutoFileName",
+		"domodel Snippets",
+		"SublimeLinter-eslint",
+		"Vintage",
+	],
+	"font_face": "Hack",
+	"font_size": 13,
+	"show_encoding": true,
+	"show_git_status": false,
+	"show_line_endings": true,
+	"show_minimap": false,
+	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true,
+	"extra_file_exclude_patterns":
+	[
+		"composer.lock",
+		"*.log",
+		"*.sql",
+		"package-lock.json"
+	],
+	"extra_folder_exclude_patterns":
+	[
+		"bootstrap/cache",
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules"
+	],
+}

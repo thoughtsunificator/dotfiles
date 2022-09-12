@@ -1,0 +1,7 @@
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+#image/jpg; eog %s;
+#image/jpeg; eog %s;
+#image/png; eog %s;
+#image/gif; eog %s;
+#application/pdf; evince %s;
+#application/zip; file-roller %s;

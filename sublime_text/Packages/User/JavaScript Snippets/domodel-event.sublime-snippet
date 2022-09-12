@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+this.listen(${1:}, "${1:} ${2:}", data => {
+
+})
+]]></content>
+	<tabTrigger>domliste</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel listener</description>
+</snippet>
