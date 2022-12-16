@@ -1,0 +1,29 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "workbench.startupEditor": "none",
+    "open-in-browser.default": "firefox",
+    "editor.selectionClipboard": false,
+    "extensions.ignoreRecommendations": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "folderTemplates.globalTemplateDirectoryPath": "/home/rle/Documents/Templates",
+    "editor.glyphMargin": false,
+    "editor.folding": false,
+    "editor.fontSize": 13,
+    "workbench.editor.showTabs": false,
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": false,
+    "window.zoomLevel": 3,
+    "update.showReleaseNotes": false,
+    "update.mode": "none",
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.languageServer": "Pylance",
+    "window.confirmBeforeClose": "always",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
+    },
+    "[python]": {
+    }
+}
