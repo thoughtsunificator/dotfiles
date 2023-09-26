@@ -1,0 +1,36 @@
+{
+	"workbench.colorTheme": "Default Light+ Experimental",
+	"workbench.startupEditor": "none",
+	"editor.selectionClipboard": false,
+	"extensions.ignoreRecommendations": true,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.glyphMargin": false,
+	"editor.folding": false,
+	"editor.fontSize": 12,
+	"workbench.editor.showTabs": false,
+	"workbench.activityBar.visible": false,
+	"update.showReleaseNotes": false,
+	"update.mode": "none",
+	"security.workspace.trust.untrustedFiles": "open",
+	"python.languageServer": "Pylance",
+	"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/*/**": true
+	},
+	"[python]": {
+			"editor.formatOnType": true
+	},
+	"editor.multiCursorPaste": "full",
+	"files.autoSave": "onFocusChange",
+	"git.openRepositoryInParentFolders": "never",
+	"editor.minimap.enabled": false,
+	"window.zoomLevel": 1,
+	"explorer.excludeGitIgnore": true,
+	"git.enabled": false,
+	"javascript.preferences.importModuleSpecifierEnding": "js",
+	"[javascript]": {
+			"editor.maxTokenizationLineLength": 2500,
+	},
+	"window.menuBarVisibility": "hidden"
+}

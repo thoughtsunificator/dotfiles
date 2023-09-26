@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+import { expect } from '@esm-bundle/chai'
+import ${1:} from "../index.js"
+
+describe("${1:}", () => {
+
+	it("instance", () => {
+
+	})
+
+})
+]]></content>
+	<tabTrigger>domtestobject</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel unit test</description>
+</snippet>

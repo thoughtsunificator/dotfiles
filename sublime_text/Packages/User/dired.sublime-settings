@@ -1,0 +1,17 @@
+{
+	"dired_hidden_files_patterns":
+	[
+		"*.sublime-project",
+		".git",
+		"*.sublime-workspace"
+	],
+	"dired_show_hidden_files": false,
+	"dired_to_copy":
+	[
+		"F:\\Coding\\myanimelist_central\\extension\\dev\\manifest.json.back.json",
+		"C:\\Users\\romain\\node_playground\\scrape_amazarashifr.js"
+	],
+	"dired_to_move":
+	[
+	]
+}

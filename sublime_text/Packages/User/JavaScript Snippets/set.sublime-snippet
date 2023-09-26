@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+set ${1:field}(${1:field}) {
+	this._${1:field} = ${1:field}
+}
+]]></content>
+	<tabTrigger>set</tabTrigger>
+	<scope>source.js</scope>
+	<description>es6 setter</description>
+</snippet>

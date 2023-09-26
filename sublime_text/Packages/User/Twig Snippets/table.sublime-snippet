@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Titre</th>
+		<th>Prix</th>
+		<th>Description</th>
+		<th>Catégorie</th>
+	</tr>
+	{% for produit in collection %}
+	<tr>
+		<td><a href="/boutique/{{collection.id}}">{{collection.id}}</a></td>
+		<td>{{collection.titre}}</td>
+		<td>{{collection.prix}}</td>
+		<td>{{collection.description}}</td>
+		<td>{{collection.categorie.nom}}</td>
+		<td><img src="/{{collection.photo.path|replace({'public': ""})}}"></td>
+	</tr>
+	{% endfor %}
+</table>
+]]></content>
+	<tabTrigger>table</tabTrigger>
+	<scope>text.html.twig</scope>
+</snippet>

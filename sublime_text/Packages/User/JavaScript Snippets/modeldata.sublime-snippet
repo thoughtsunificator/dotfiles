@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+export { default as ${2:Model}Binding } from "./${2/./\l$0/g}.binding"
+
+export default data => ({
+	tagName: "${1:div}"
+})
+]]></content>
+	<tabTrigger>modeldata</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel model data</description>
+</snippet>

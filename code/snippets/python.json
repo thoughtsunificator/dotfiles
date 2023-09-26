@@ -1,0 +1,865 @@
+{
+  "a": {
+    "prefix": ["a"],
+    "body": [
+      "h << h.a($1)",
+      "$0"
+    ],
+    "description": "Defines a hyperlink"
+  },
+  "a:href": {
+    "prefix": ["a:href"],
+    "body": [
+      "h << h.a($1, href=\"\")",
+      "$0"
+    ],
+    "description": "Defines a hyperlink"
+  },
+  "a:blank": {
+    "prefix": ["a:blank"],
+    "body": [
+      "h << h.a($1, href=\"http://$2\", target=\"_blank\", rel=\"noopener noreferrer\")",
+      "$0"
+    ],
+    "description": "Defines a hyperlink"
+  },
+  "a:link": {
+    "prefix": ["a:link"],
+    "body": [
+      "h << h.a($1, href=\"http://$2\")",
+      "$0"
+    ],
+    "description": "Defines a hyperlink"
+  },
+  "a:mail": {
+    "prefix": ["a:mail"],
+    "body": [
+      "h << h.a($1, href=\"mailto:$2\")",
+      "$0"
+    ],
+    "description": "Defines a hyperlink"
+  },
+  "a:tel": {
+    "prefix": ["a:tel"],
+    "body": [
+      "h << h.a($1, href=\"tel:+$2\")",
+      "$0"
+    ],
+    "description": "Defines a hyperlink"
+  },
+
+  "abbr": {
+    "prefix": ["abbr"],
+    "body": [
+      "h << h.abbr($1, title=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an abbreviation or an acronym"
+  },
+  "address": {
+    "prefix": ["address", "adr"],
+    "body": [
+      "h << h.address($1)",
+      "$0"
+    ],
+    "description": "Defines contact information for the author/owner of a document"
+  },
+
+  "area": {
+    "prefix": ["area"],
+    "body": [
+      "h << h.area(shape=\"$1\", coords=\"$2\", href=\"$3\", alt=\"$4\")",
+      "$0"
+    ],
+    "description": "Defines an area inside an image map"
+  },
+  "area:c": {
+    "prefix": ["area:c"],
+    "body": [
+      "h << h.area(shape=\"circle\", coords=\"$1\", href=\"$2\", alt=\"$3\")",
+      "$0"
+    ],
+    "description": "Defines an area inside an image map"
+  },
+  "area:d": {
+    "prefix": ["area:d"],
+    "body": [
+      "h << h.area(shape=\"default\", coords=\"$1\", href=\"$2\", alt=\"$3\")",
+      "$0"
+    ],
+    "description": "Defines an area inside an image map"
+  },
+  "area:p": {
+    "prefix": ["area:c"],
+    "body": [
+      "h << h.area(shape=\"poly\", coords=\"$1\", href=\"$2\", alt=\"$3\")",
+      "$0"
+    ],
+    "description": "Defines an area inside an image map"
+  },
+  "area:r": {
+    "prefix": ["area:c"],
+    "body": [
+      "h << h.area(shape=\"rect\", coords=\"$1\", href=\"$2\", alt=\"$3\")",
+      "$0"
+    ],
+    "description": "Defines an area inside an image map"
+  },
+
+  "article": {
+    "prefix": ["article", "art"],
+    "body": [
+      "with h.article:",
+      "\t$0"
+    ],
+    "description": "Defines an article"
+  },
+
+  "aside": {
+    "prefix": ["aside"],
+    "body": [
+      "with h.aside:",
+      "\t$0"
+    ],
+    "description": "Defines content aside from the page content"
+  },
+
+  "audio": {
+    "prefix": ["audio"],
+    "body": [
+      "h << h.aside(src=\"$1\")",
+      "\t$0"
+    ],
+    "description": "Defines embedded sound content"
+  },
+
+  "b": {
+    "prefix": ["b"],
+    "body": [
+      "h << h.b($1)",
+      "\t$0"
+    ],
+    "description": "Defines bold text"
+  },
+
+  "base": {
+    "prefix": ["base"],
+    "body": [
+      "h.head << h.head.base(href=\"$1\")",
+      "\t$0"
+    ],
+    "description": "Specifies the base URL/target for all relative URLs in a document"
+  },
+
+  "bdo": {
+    "prefix": ["bdo"],
+    "body": [
+      "h << h.bdo($1, dir=\"$2\")",
+      "\t$0"
+    ],
+    "description": "Overrides the current text direction"
+  },
+  "bdo:l": {
+    "prefix": ["bdo:l"],
+    "body": [
+      "h << h.bdo($1, dir=\"ltr\")",
+      "\t$0"
+    ],
+    "description": "Overrides the current text direction"
+  },
+  "bdo:r": {
+    "prefix": ["bdo:r"],
+    "body": [
+      "h << h.bdo($1, dir=\"rtl\")",
+      "\t$0"
+    ],
+    "description": "Overrides the current text direction"
+  },
+
+  "blockquote": {
+    "prefix": ["blockquote"],
+    "body": [
+      "h << h.blockquote($1, cite=\"$2\")",
+      "\t$0"
+    ],
+    "description": "Defines a section that is quoted from another source"
+  },
+
+  "body": {
+    "prefix": ["body"],
+    "body": [
+      "with h.body:",
+      "\t$0"
+    ],
+    "description": "Defines the document's body"
+  },
+
+  "br": {
+    "prefix": ["br"],
+    "body": [
+      "h.br$0"
+    ],
+    "description": "Defines a single line break"
+  },
+
+  "button": {
+    "prefix": ["button"],
+    "body": [
+      "h << h.button($1)",
+      "\t$0"
+    ],
+    "description": "Defines a clickable button"
+  },
+  "button:disabled": {
+    "prefix": ["button:d", "button:disabled"],
+    "body": [
+      "h << h.button($1, disabled=True)",
+      "\t$0"
+    ],
+    "description": "Defines a clickable button"
+  },
+  "button:reset": {
+    "prefix": ["button:r", "button:reset"],
+    "body": [
+      "h << h.button($1, type=\"reset\")",
+      "\t$0"
+    ],
+    "description": "Defines a clickable button"
+  },
+  "button:submit": {
+    "prefix": ["button:s", "button:submit"],
+    "body": [
+      "h << h.button($1, type=\"submit\")",
+      "\t$0"
+    ],
+    "description": "Defines a clickable button"
+  },
+
+  "canvas": {
+    "prefix": ["canvas"],
+    "body": [
+      "h << h.canvas(id=\"\")",
+      "\t$0"
+    ],
+    "description": "Used to draw graphics, on the fly, via scripting (usually JavaScript)"
+  },
+
+  "caption": {
+    "prefix": ["caption"],
+    "body": [
+      "h << h.caption($1)",
+      "$0"
+    ],
+    "description": "Defines a table caption"
+  },
+
+  "cite": {
+    "prefix": ["cite"],
+    "body": [
+      "h << h.cite($1)",
+      "$0"
+    ],
+    "description": "Defines the title of a work"
+  },
+
+  "code": {
+    "prefix": ["code"],
+    "body": [
+      "h << h.code($1)",
+      "$0"
+    ],
+    "description": "Defines a piece of computer code"
+  },
+
+  "col": {
+    "prefix": ["col"],
+    "body": [
+      "h << h.col()",
+      "$0"
+    ],
+    "description": "Specifies column properties for each column within a <colgroup> element"
+  },
+  "col:span": {
+    "prefix": ["col:span"],
+    "body": [
+      "h << h.col(span=\"$1\")",
+      "$0"
+    ],
+    "description": "Specifies column properties for each column within a <colgroup> element"
+  },
+  "colgroup": {
+    "prefix": ["colgroup", "colg"],
+    "body": [
+      "with h.colgroup:",
+      "\t$0"
+    ],
+    "description": "Specifies a group of one or more columns in a table for formatting"
+  },
+
+  "data": {
+    "prefix": ["data"],
+    "body": [
+      "h << h.data($1, value=\"$2\")",
+      "$0"
+    ],
+    "description": "Adds a machine-readable translation of a given content"
+  },
+  "datagrid": {
+    "prefix": ["datagrid", "datag"],
+    "body": [
+      "with h.datagrid:",
+      "\t$0"
+    ]
+  },
+  "datalist": {
+    "prefix": ["datalist", "datal"],
+    "body": [
+      "with h.datalist:",
+      "\t$0"
+    ],
+    "description": "Specifies a list of pre-defined options for input controls"
+  },
+
+  "dd": {
+    "prefix": ["dd"],
+    "body": [
+      "h << h.dd($1)",
+      "\t$0"
+    ],
+    "description": "Defines a description/value of a term in a description list"
+  },
+
+  "details": {
+    "prefix": ["details"],
+    "body": [
+      "with h.details:",
+      "\t$0"
+    ],
+    "description": "Defines additional details that the user can view or hide"
+  },
+
+  "dfn": {
+    "prefix": ["dfn"],
+    "body": [
+      "h << h.dfn($1, title=\"$2\")",
+      "\t$0"
+    ],
+    "description": "Specifies a term that is going to be defined within the content"
+  },
+
+  "dialog": {
+    "prefix": ["dialog"],
+    "body": [
+      "with h.dialog():",
+      "\t$0"
+    ],
+    "description": "Defines a dialog box or window"
+  },
+
+  "div": {
+    "prefix": ["div"],
+    "body": [
+      "with h.div:",
+      "\t$0"
+    ],
+    "description": "Defines a section in a document"
+  },
+
+  "dl": {
+    "prefix": ["dl"],
+    "body": [
+      "with h.dl:",
+      "\t$0"
+    ],
+    "description": "Defines a description list"
+  },
+  "dt": {
+    "prefix": ["dt"],
+    "body": [
+      "h << h.dt($1)",
+      "$0"
+    ],
+    "description": "Defines a term/name in a description list"
+  },
+
+  "em": {
+    "prefix": ["em"],
+    "body": [
+      "h << h.em($1)",
+      "$0"
+    ],
+    "description": "Defines emphasized text"
+  },
+
+  "embed": {
+    "prefix": ["embed", "emb"],
+    "body": [
+      "h << h.em(src=\"$1\" type=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines a container for an external application"
+  },
+
+  "fieldset": {
+    "prefix": ["fieldset"],
+    "body": [
+      "with h.fieldset:",
+      "\t$0"
+    ],
+    "description": "Groups related elements in a form"
+  },
+  "fieldset:disabled": {
+    "prefix": ["fieldset:d", "fieldset:disabled"],
+    "body": [
+      "with h.fieldset(disabled=True):",
+      "\t$0"
+    ],
+    "description": "Groups related elements in a form"
+  },
+
+  "figcaption": {
+    "prefix": ["figcaption", "figc"],
+    "body": [
+      "h << h.figcaption($1)",
+      "$0"
+    ],
+    "description": "Defines a caption for a <figure> element"
+  },
+  "figure": {
+    "prefix": ["figure", "fig"],
+    "body": [
+      "with h.figure:",
+      "\t$0"
+    ],
+    "description": "Specifies self-contained content"
+  },
+
+  "footer": {
+    "prefix": ["footer"],
+    "body": [
+      "with h.footer($1)",
+      "\t$0"
+    ],
+    "description": "Defines a footer for a document or section"
+  },
+
+  "form": {
+    "prefix": ["form"],
+    "body": [
+      "with h.form",
+      "\t$0"
+    ],
+    "description": "Defines an HTML form for user input"
+  },
+  "form:submit": {
+    "prefix": ["form:submit"],
+    "body": [
+      "with h.form($1).action($2):",
+      "\t$0"
+    ],
+    "description": "Defines an HTML form with action for user input"
+  },
+
+
+  "h1": {
+    "prefix": ["h1"],
+    "body": [
+      "h << h.h1($1)",
+      "$0"
+    ],
+    "description": "Defines HTML headings"
+  },
+  "h2": {
+    "prefix": ["h2"],
+    "body": [
+      "h << h.h2($1)",
+      "$0"
+    ],
+    "description": "Defines HTML headings"
+  },
+  "h3": {
+    "prefix": ["h3"],
+    "body": [
+      "h << h.h3($1)",
+      "$0"
+    ],
+    "description": "Defines HTML headings"
+  },
+  "h4": {
+    "prefix": ["h4"],
+    "body": [
+      "h << h.h4($1)",
+      "$0"
+    ],
+    "description": "Defines HTML headings"
+  },
+  "h5": {
+    "prefix": ["h5"],
+    "body": [
+      "h << h.h5($1)",
+      "$0"
+    ],
+    "description": "Defines HTML headings"
+  },
+  "h6": {
+    "prefix": ["h6"],
+    "body": [
+      "h << h.h6($1)",
+      "$0"
+    ],
+    "description": "Defines HTML headings"
+  },
+
+  "head": {
+    "prefix": ["h6"],
+    "body": [
+      "h.head << h.head.$1($2)",
+      "$0"
+    ],
+    "description": "Contains metadata/information for the document"
+  },
+
+  "header": {
+    "prefix": ["header", "hdr"],
+    "body": [
+      "with h.header:",
+      "\t$0"
+    ],
+    "description": "Defines a header for a document or section"
+  },
+
+  "hr": {
+    "prefix": ["hr"],
+    "body": [
+      "h << h.hr",
+      "$0"
+    ],
+    "description": "Defines a thematic change in the content"
+  },
+
+  "i": {
+    "prefix": ["i"],
+    "body": [
+      "h << h.i($1)",
+      "$0"
+    ],
+    "description": "Defines a part of text in an alternate voice or mood"
+  },
+
+  "iframe": {
+    "prefix": ["iframe", "ifr"],
+    "body": [
+      "h << h.iframe(src=\"$1\", frameborder=\"0\")",
+      "$0"
+    ],
+    "description": "Defines an inline frame"
+  },
+
+
+  "img": {
+    "prefix": ["img"],
+    "body": [
+      "h << h.img(src=\"$1\", alt=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an image"
+  },
+  "img:srcset": {
+    "prefix": ["img:srcset", "img:s"],
+    "body": [
+      "h << h.img(src=\"$1\", alt=\"$2\", srcset=\"$3\")",
+      "$0"
+    ],
+    "description": "Defines an image"
+  },
+  "img:sizes": {
+    "prefix": ["img:sizes", "img:z"],
+    "body": [
+      "h << h.img(src=\"$1\", alt=\"$2\", sizes=\"$3\", srcset=\"$4\")",
+      "$0"
+    ],
+    "description": "Defines an image"
+  },
+
+  "input": {
+    "prefix": ["input", "inp"],
+    "body": [
+      "h << h.input(type=\"$1\", name=\"$2\", id=\"$3\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:button": {
+    "prefix": ["input:button", "input:btn", "input:b"],
+    "body": [
+      "h << h.input(type=\"button\", value=\"$1\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:checkbox": {
+    "prefix": ["input:checkbox", "input:c"],
+    "body": [
+      "h << h.input(type=\"checkbox\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:date": {
+    "prefix": ["input:date"],
+    "body": [
+      "h << h.input(type=\"date\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:datetime": {
+    "prefix": ["input:date"],
+    "body": [
+      "h << h.input(type=\"datetime\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:datetime-local": {
+    "prefix": ["input:datetime-local"],
+    "body": [
+      "h << h.input(type=\"datetime-local\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:email": {
+    "prefix": ["input:email"],
+    "body": [
+      "h << h.input(type=\"email\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:file": {
+    "prefix": ["input:file", "input:f"],
+    "body": [
+      "h << h.input(type=\"file\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:hidden": {
+    "prefix": ["input:hidden", "input:h"],
+    "body": [
+      "h << h.input(type=\"hidden\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:image": {
+    "prefix": ["input:image", "input:i"],
+    "body": [
+      "h << h.input(type=\"image\", src=\"$1\", alt=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:month": {
+    "prefix": ["input:month"],
+    "body": [
+      "h << h.input(type=\"month\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:number": {
+    "prefix": ["input:number"],
+    "body": [
+      "h << h.input(type=\"number\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:password": {
+    "prefix": ["input:password", "input:p"],
+    "body": [
+      "h << h.input(type=\"password\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:radio": {
+    "prefix": ["input:radio", "input:r"],
+    "body": [
+      "h << h.input(type=\"radio\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:range": {
+    "prefix": ["input:range"],
+    "body": [
+      "h << h.input(type=\"range\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:reset": {
+    "prefix": ["input:reset"],
+    "body": [
+      "h << h.input(type=\"reset\", value=\"$1\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:search": {
+    "prefix": ["input:search"],
+    "body": [
+      "h << h.input(type=\"search\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:sumbit": {
+    "prefix": ["input:submit", "input:s"],
+    "body": [
+      "h << h.input(type=\"submit\", value=\"$1\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:tel": {
+    "prefix": ["input:tel"],
+    "body": [
+      "h << h.input(type=\"tel\", name=\"$1\", value=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:text": {
+    "prefix": ["input:text", "input:t"],
+    "body": [
+      "h << h.input(type=\"text\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:time": {
+    "prefix": ["input:time"],
+    "body": [
+      "h << h.input(type=\"time\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:url": {
+    "prefix": ["input:url"],
+    "body": [
+      "h << h.input(type=\"url\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "input:week": {
+    "prefix": ["input:week"],
+    "body": [
+      "h << h.input(type=\"url\", name=\"$1\", id=\"$2\")",
+      "$0"
+    ],
+    "description": "Defines an input control"
+  },
+  "render": {
+    "prefix": ["render"],
+    "body": [
+      "@presentation.render_for($1)",
+      "def render(self: $1, h, comp, *args):",
+      "\t$0",
+      "\treturn h.root"
+    ],
+    "description": "Create a render function"
+  },
+  "render:name": {
+    "prefix": ["render:name"],
+    "body": [
+      "@presentation.render_for($1, \"$2\")",
+      "def render_$2(self: $1, h, comp, *args):",
+      "\t$0",
+      "\treturn h.root"
+    ],
+    "description": "Create a named render function"
+  },
+  "render:import": {
+    "prefix": ["render:import"],
+    "body": [
+      "from nagare import presentation",
+      "$0"
+    ],
+    "description": "Import presentation from nagare"
+  },
+  "nmodel": {
+    "prefix": "nmodel",
+    "body": [
+      "import sqlalchemy",
+      "",
+      "from nagare import database",
+      "from nagare.database import Entity",
+      "from nagare.database import Field",
+      "",
+      "class ${0:MyModel}(Entity):",
+      "\tpass"
+    ]
+  },
+  "ncomp": {
+    "prefix": "ncomp",
+    "body": [
+      "",
+      "class ${0:MyComp}:",
+      "\tpass"
+    ]
+  },
+  "nview": {
+    "prefix": "nview",
+    "body": [
+      "from nagare import i18n",
+      "from nagare import presentation",
+      "from nagare import security",
+      "from nagare import component",
+      "from suivi import event",
+      "from .comp import ${0:MyComp}",
+      "",
+      "@presentation.render_for(${0:MyComp})",
+      "def render(self, h, comp, *args):",
+      "\treturn h.root"
+    ]
+  },
+  "ninit": {
+    "prefix": "ninit",
+    "body": [
+      "from . import views # noqa",
+      "from .models import ${0:MyModel}",
+      "from .comp import ${1:MyComp}",
+      "",
+      "__all__ = [\"${0:MyModel}\", \"${1:MyComp}\"]"
+    ]
+  },  
+  "npopulate": {
+    "prefix": "npopulate",
+    "body": [
+      "from nagare import log",
+      "",
+      "from .models import ${1:MyModel}",
+      "",
+      "entries = (",
+    
+      ")",
+      "",
+      "def populate_dev():",
+          "\tlog.info(\"Populate ${0:modelName}\")",
+          "\tfor entry in entries:",
+              "\t\t${0:modelName} = ${1:MyModel}.get_by()",
+              "\t\tif ${0:modelName} is not None:",
+                  "\t\t\tcontinue",
+              "\t\t${1:MyModel}(",
+              "\t\t\t",
+              "\t\t)"
+
+    ]
+  }  
+}

@@ -1,0 +1,7 @@
+{
+	"nt": {
+		"win32": {
+			"firefox": "C:\\Program Files\\firefox-60.0.1\\firefox.exe -purgecaches -new-tab"
+		}
+	}
+}

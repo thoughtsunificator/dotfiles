@@ -1,0 +1,10 @@
+[user]
+	email = oss@thoughtsunificator.me
+	name = thoughtsunificator
+[maintenance]
+	repo = /home/romain/i3-animated-background
+	repo = /home/romain/zsh-snap
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

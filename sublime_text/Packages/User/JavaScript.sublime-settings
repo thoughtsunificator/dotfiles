@@ -1,0 +1,9 @@
+{
+	"extensions":
+	[
+		"jsm",
+		".sequelizerc",
+		"js",
+		"njs"
+	]
+}

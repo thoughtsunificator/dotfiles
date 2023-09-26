@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+<form method="POST">
+ 	<label>
+ 		<b>Login</b>
+ 		<div>
+ 			<input type="text" placeholder="Enter Login" name="login" required>
+ 		</div>
+ 	</label>	 	
+
+  <label>
+  	<b>Password</b>
+    <div>
+    	<input type="password" placeholder="Enter Password" name="password" required>
+    </div>
+  </label>
+
+  <button>Register</button>
+</form>
+]]></content>
+	<tabTrigger>userform</tabTrigger>
+	<scope>text.html.twig, text.html</scope>
+</snippet>

@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+import { Observable } from "domodel"
+
+/**
+ * @global
+ */
+class ${1:MyClass} extends Observable {
+
+	/**
+	 * @param {${3:[type]}} ${2:field}
+	 */
+	constructor(${2:field}) {
+		super()
+		this._${2:field} = ${2:field}
+	}
+
+	/**
+	 * @type {${3:[type]}}
+	 */
+	get ${2:field}() {
+		return this._${2:field}
+	}
+
+}
+
+export default ${1:MyClass}
+
+]]></content>
+	<tabTrigger>observable</tabTrigger>
+	<scope>source.js</scope>
+	<description>domodel observable</description>
+</snippet>

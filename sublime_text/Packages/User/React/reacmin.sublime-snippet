@@ -1,0 +1,57 @@
+<snippet>
+	<content><![CDATA[
+import React from 'react';
+		
+import { 
+	ReferenceInput, 
+	ReferenceField, 
+	TextField, 
+	AutocompleteInput,
+	ArrayInput,
+	SimpleFormIterator,
+	TextInput,
+	AutocompleteArrayInput ,
+	SelectArrayInput,
+	ReferenceFieldController
+} from "react-admin";
+
+import { 
+	HydraAdmin, 
+	ResourceGuesser,
+	ListGuesser,
+	CreateGuesser,
+	FieldGuesser,
+	EditGuesser,
+	InputGuesser,
+	ShowGuesser
+ } from '@api-platform/admin';
+
+export const Edit = props => (
+	<EditGuesser  {...props}>
+		
+	</EditGuesser >
+);
+
+export const Create = props => (
+	<CreateGuesser {...props}>
+	
+	</CreateGuesser>
+);
+
+export const List = props => (
+	<ListGuesser {...props}>
+		
+	</ListGuesser>
+);
+
+export const Show = props => (
+	<ShowGuesser {...props}>
+		
+	</ShowGuesser>
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>reacmin</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.jsx, source.js</scope>
+</snippet>
