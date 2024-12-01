@@ -1,4 +1,0 @@
-[
-	{ "caption": "Git: Save", "command": "exec", "args": {"cmd": "git save"} },
-	{ "caption": "Git: Pull", "command": "exec", "args": {"cmd": "git pull"} }
-]
