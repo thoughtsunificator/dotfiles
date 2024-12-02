@@ -1,0 +1,75 @@
+name: Build and publish extension
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: "ubuntu-20.04"
+    name: Build and publish
+
+    steps:
+
+      - name: git-checkout
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        with:
+          name: build-file
+          path: build/addon.zip
+
+      - name: Upload manifest
+        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2
+        with:
+          name: manifest-file
+          path: public/manifest.json
+
+
+  publish-chrome:
+    runs-on: "ubuntu-20.04"
+    needs: build
+    steps:
+
+      - name: Download build
+        id: download
+        uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281
+        with:
+          name: build-file
+
+      - name: Publish to Chrome
+        uses: thoughtsunificator/chrome-publish-action@0e1cca631476b8ee281e34cb3984f5a2e1d17b80
+        with:
+          zip: ${{ steps.download.outputs.download-path }}/addon.zip
+          chrome-extension-id: hncoaagegcdnajffjpkldhfceipfgnnf
+          chrome-client-id: ${{ secrets.CHROME_CLIENT_ID }}
+          chrome-refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          chrome-client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+
+  publish-firefox:
+    runs-on: "ubuntu-20.04"
+    needs: build
+    steps:
+
+      - name: Download build
+        id: download
+        uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281
+
+      - name: Publish to Firefox
+        uses: thoughtsunificator/firefox-publish-action@89cc7b9ee92bb376dff395abb1e2bfe8826913e2
+        with:
+          zip: ${{ steps.download.outputs.download-path }}/build-file/addon.zip
+          firefox-jwt-issuer: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          firefox-jwt-secret: ${{ secrets.FIREFOX_JWT_SECRET }}
+          firefox-guid: "{40b34433-7cf7-4064-bf3d-ba1f0c9b3524}"
+          firefox-manifest: ${{ steps.download.outputs.download-path }}/manifest-file/manifest.json
