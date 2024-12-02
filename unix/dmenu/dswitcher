@@ -1,0 +1,13 @@
+#!/bin/sh
+
+lines=$(wmctrl -lx | awk '{$1="";$4="";gsub(/ /,"", $0);printf("%d - %s\n",NR,$0)}')
+num=$(dmenu -fn 'Hack Nerd Font-11' -i <<< "$lines"| cut -d '-' -f -1)
+
+[[ -z "$num" ]] && exit
+desktop_number=$(wmctrl -l | sed -n "$num p" | awk '{ print $2 }')
+# if window is sticky use -R instead
+if [[ $desktop_number == -1 ]]; then
+  wmctrl -l | sed -n "$num p" | cut -c -10 | xargs wmctrl -i -R
+else
+  wmctrl -l | sed -n "$num p" | cut -c -10 | xargs wmctrl -i -a
+fi
