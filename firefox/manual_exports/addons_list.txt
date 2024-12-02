@@ -1,0 +1,32 @@
+Add-ons
+Name 	Type 	Version 	Enabled 	ID
+10ten Japanese Reader (Rikaichamp)	extension	1.12.3	true	{59812185-ea92-4cca-8ab7-cfcacee81281}
+Add-ons Search Detection	extension	2.0.0	true	addons-search-detection@mozilla.com
+AlternativeTo Search	extension	1.2	true	{876351f7-1c85-4d6a-862c-8d59176bb1c6}
+Auto Tab Discard	extension	0.6.2	true	{c2c003ee-bd69-42a2-b0e9-6f34222cb046}
+AutoFormer+	extension	0.648	true	{5556F97E-11A5-46b0-9082-32AD74AAA920}
+ClearURLs	extension	1.25.0	true	{74145f27-f039-47ce-a470-a662b129930a}
+Container proxy	extension	0.1.22	true	contaner-proxy@bekh-ivanov.me
+Demodal - Block modals and overlays	extension	1.0.4	true	{a8445bf1-5494-49bf-9af5-a830e5bf3309}
+Don't Fuck With Paste	extension	2.7	true	DontFuckWithPaste@raim.ist
+Download All Images	extension	0.7.8	true	{32af1358-428a-446d-873e-5f8eb5f2a72e}
+enable-selection	extension	1.7	true	{4c302fb8-aa3f-4354-8faf-9bbfadfd69f1}
+Fake Filler	extension	3.3.1	true	{7efbd09d-90ad-47fa-b91a-08c472bdf566}
+FoxyProxy Standard	extension	7.5.1	true	foxyproxy@eric.h.jung
+Grammarly: Grammar Checker and Writing App	extension	8.903.0	true	87677a2c52b84ad3a151a4a72f5bd3c4@jetpack
+HLS Downloader	extension	3.2.1	true	{e3ec0551-9bfa-4233-b9dd-6b36f6a80962}
+Image Max URL	extension	0.19.5	true	maxurl@qsniyg
+Image Search Options	extension	3.0.12	true	{4a313247-8330-4a81-948e-b79936516f78}
+Infy Scroll	extension	0.7	true	infy-scroll@webextensions
+Insert Template to Editables	extension	1	true	{7aca7ac1-ccce-46a2-a14e-f477daa08d32}
+Lighthouse	extension	100.0.0.2	true	{cf3dba12-a848-4f68-8e2d-f9fadc0721de}
+MultiTranslate	extension	2.3.0	true	{c8f79b34-c3ff-4ce4-bdf4-eefa15c87f98}
+Netcraft Extension	extension	1.16.9	true	{0e10f3d7-07f6-4f12-97b9-9b27e07139a5}
+Netflix 1080p	extension	1.17.0	true	{f18f0257-10ad-4ff7-b51e-6895edeccfc8}
+Outlook.com mailto	extension	2.7	true	outlook@computerwhiz
+Privacy Pass	extension	3.0.3	true	{48748554-4c01-49e8-94af-79662bf34d50}
+Sidebery	extension	4.10.2	true	{3c078156-979c-498b-8990-85f7987dd929}
+Sound Adjustment	extension	0.1.1	true	{6c8324de-8b0e-496d-9337-aab2f914012e}
+Tab Auto Refresh	extension	0.1.9	true	{7fee47a1-8299-4576-90bf-5fd88d756926}
+uBlock Origin	extension	1.44.2	true	uBlock0@raymondhill.net
+Video DownloadHelper	extension	7.6.0	true	{b9db16a4-6edc-47ec-a1f4-b86292ed211d}

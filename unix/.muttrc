@@ -1,0 +1,47 @@
+source "~/.mutt/user"
+source ~/.mutt/dracula.muttrc
+
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set sidebar_width=12
+set sidebar_visible=yes
+#set sidebar_delim='|'
+
+set from= $imap_user
+set use_from=yes
+set realname='Your Name'
+set folder = imaps://outlook.office365.com:993
+set spoolfile= +INBOX
+set postponed= +$my_drafts_noquote
+set record = +$my_sent_noquote
+set trash = +$my_trash_noquote
+mailboxes
+set mail_check = 100
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set smtp_url = "smtp://$imap_user@smtp.office365.com:587"
+set smtp_pass = $imap_pass
+set move = no
+set imap_keepalive = 900
+set record="+Sent"
+set sort = reverse-date-received
+set sort_aux = reverse-last-date-received
+
+set imap_check_subscribed="yes"
+set imap_list_subscribed="yes"
+set timeout=15
+set mail_check=90
+set imap_keepalive=180
+set imap_idle
+
+set editor = "vim"
+set new_mail_command="notify-send --icon='/home/Romain/Pictures/Saved/neomutt.png' \
+'New Email' '%n new messages, %u unread.' &"
+
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+

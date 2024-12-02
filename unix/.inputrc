@@ -1,0 +1,7 @@
+# This line sets the completions to be listed immediately instead of ringing the bell, when the completing word has more than one possible completion.
+set show-all-if-ambiguous on
+
+set colored-stats on
+
+# Experimental
+set completion-ignore-case on
