@@ -1,0 +1,41 @@
+! https://wiki.archlinux.org/title/X_resources 
+! Xft = X Free Type
+
+! Specifies the terminal type name to be set in the TERM environment variable.
+*termName: xterm-256color
+*scrollBar: false
+*.foreground: white
+*.background: black
+!*pointerColor: white
+!*pointerColorBackground: black
+*vt100.faceName : Hack Nerd Font:size=14:antialias=true
+*borderWidth: 0
+*internalBorder: 0
+Xft.antialias:  true
+! Type of subpixel antialiasing (none, rgb, bgr, vrgb or vbgr)
+Xft.rgba:       rgba
+! Letter spacing
+Xft.hinting:    true
+Xft.hintstyle:  hintmedium
+! Resolution for Xft in dots per inch
+Xft.dpi: 96
+!*CharClass: 33:48,37-38:48,45-47:48,58:48,61:48,63-64:48,126:48,161-255:48
+! This specifies whether xterm will run in UTF-8 mode. If you set this resource, xterm also sets the wideChars resource as a side-effect. When set via a resource, xterm cannot be switched via control sequences out of UTF-8 mode. The default is ``0'' (off). Any other value will turn on UTF-8 mode.
+! Specifies whether the backarrow key transmits a backspace (8) or delete (127) character. This corresponds to the DECBKM control sequence. The default (backspace) is ``true.'' Pressing the control key toggles this behavior.
+*.backarrowKey : false
+! Specifies a string containing terminal setting keywords and the characters to which they may be bound 
+*ttyModes : erase ^?
+! If ``true'', Meta characters are converted into a two-character sequence with the character itself preceded by ESC
+*vt100.metaSendsEscape: true
+! Specifies the number of lines to save beyond the top of the screen when a scrollbar is turned on. The default is 64.
+*saveLines: 10000
+*selectToClipboard: true
+! Specifies whether or not synthetic key and button events (generated using the X protocol SendEvent request) should be interpreted or discarded
+*allowSendEvents:true
+! Specifies whether or not the shell to be run in the window should be started as a login shell. The default is ``false.''
+xterm*loginShell: true
+*VT100.printAttributes: 2
+! Alt + P pipe terminal output to given command
+*VT100.printerCommand: xterm -T History -e sh -c 'less -r <&3' 3<&0
+*VT100.translations: #override Meta <KeyPress> P: print-everything() \n
+
