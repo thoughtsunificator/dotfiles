@@ -3,9 +3,8 @@ syntax on
 set autoread
 " Eliminate delays on ESC in vim and zsh
 set timeoutlen=1000 ttimeoutlen=0
-set clipboard=unnamedplus
+set clipboard=unnamedplus,unnamed
 set hlsearch
-set autochdir
 set guifont=Hack\ Nerd\ Font:h18
 set shortmess=at
 set encoding=UTF-8
@@ -25,20 +24,18 @@ nnoremap <silent> <C-f> :Rg<CR>
 "nnoremap <C-p> :execute 'Rg' ProjectRootGuess()<CR>
 nnoremap <silent> <C-p> :Commands<CR>
 nnoremap <silent> <C-o> :Marks<CR>
-nnoremap <silent> <C-d> :set mark<CR>
 nnoremap <C-PageUp> :bp<CR>
 nnoremap <C-PageDown> :bn<CR>
-nnoremap <C-tab> :bn<CR>
+nnoremap <tab> :bn<CR>
 nnoremap <C-s> :w<CR>
+
 " reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
 
-
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
