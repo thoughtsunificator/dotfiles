@@ -1,0 +1,14 @@
+tmp=$(mktemp -d)
+pipx run i3-resurrect save -d $tmp -p current
+template_name="$(echo -n '' | dmenu -p  -fn 'Hack Nerd Font-11')"
+template_path=$HOME/.i3/i3-resurrect/templates/$template_name
+mkdir $template_path
+if ! test -f $template_path/prompt.sh; then
+  cp $HOME/.i3/i3-resurrect/templates/default_prompt.sh $template_path/prompt.sh
+fi
+if ! test -f $template_path/programs.json; then
+  cp $template_path/programs.json $template_path/programs.json.bak 
+  cp $tmp/profiles/current_programs.json $template_path/programs.json 
+fi
+cp $template_path/layout.json $template_path/layout.json.bak 
+cp $tmp/profiles/current_layout.json $template_path/layout.json

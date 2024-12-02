@@ -1,0 +1,27 @@
+# This line sets the completions to be listed immediately instead of ringing the bell, when the completing word has more than one possible completion.
+set show-all-if-ambiguous on
+set colored-stats on
+# Experimental
+set completion-ignore-case on
+# The number of possible completions that determines when the user is asked whether the list of possibilities should be displayed
+set completion-query-items -1
+# The editing-mode variable controls which default set of key bindings is used
+set editing-mode vi
+set show-mode-in-prompt on
+$if mode=vi
+set keymap vi-command
+# these are for vi-command mode
+"gg": beginning-of-history
+"G": end-of-history
+"p": "i !!*\r"
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+j: history-search-forward
+k: history-search-backward
+set keymap vi-insert
+# these are for vi-insert mode
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"p": self-insert
+"jj": vi-movement-mode
+$endif
