@@ -1,0 +1,44 @@
+name: "release"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: "Release"
+    runs-on: "ubuntu-20.04"
+
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5
+
+      - name: npm ci
+        run: npm ci
+
+      - name: npm test
+        run: npm test
+
+      - name: Automatic release
+        uses: "marvinpinto/action-automatic-releases@d68defdd11f9dcc7f52f35c1b7c236ee7513bcc1"
+        with:
+          repo_token: "${{ secrets.PAT_TOKEN }}"
+          prerelease: false
+
+      - name: Generate documentation
+        run: npm run generate-docs
+
+      - name: Push documentation
+        uses: s0/git-publish-subdir-action@92faf786f11dfa44fc366ac3eb274d193ca1af7e
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: docs
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@5022a536959d4e5508d7fd8d4b57a2590d7edbe9
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public

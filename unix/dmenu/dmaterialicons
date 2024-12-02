@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+choice=$(while read p; do
+  stringarray=($p)
+  printf -- "${stringarray[0]} : \\${stringarray[1]}\n"
+done <$HOME/.local/share/materialmoji/icons.txt | dmenu -p 🔍 -fn 'Material Design Icons-15'  -i  -l 30 | cut -d ':' -f -1)
+
+echo -n $choice | xclip -selection clipboard

@@ -1,0 +1,4 @@
+# ctags
+/tags
+# vim swp files
+*.swp

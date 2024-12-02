@@ -1,0 +1,56 @@
+! https://wiki.archlinux.org/title/X_resources 
+! Xft = X Free Type
+! Enable utf8 escape sequences (syntax highlighting)
+utf8: true
+Xft.antialias:  true
+! Type of subpixel antialiasing (none, rgb, bgr, vrgb or vbgr)
+Xft.rgba:       rgba
+! Letter spacing
+Xft.hinting:    true
+Xft.hintstyle:  hintmedium
+! Resolution for Xft in dots per inch
+Xft.dpi: 96
+
+! Specifies the terminal type name to be set in the TERM environment variable.
+XTerm.termName: xterm-256color
+! Disable clicking open a menu
+XTerm.omitTranslation: popup-menu
+! Mostly used for to enable graphics feature (when using timg)
+! SIXEL is not present in (default) VT420: https://vt100.net/emu/dcsseq_dec.html
+XTerm.vt100.decTerminalID: vt340
+! VT100 Widget Resources
+XTerm.vt100.scrollBar: false
+XTerm.vt100.background: black
+XTerm.vt100.foreground: white
+XTerm.vt100.faceName : Hack Nerd Font:size=14:antialias=true
+XTerm.vt100.borderWidth: 0
+XTerm.vt100.internalBorder: 0
+! Specifies whether the backarrow key transmits a backspace (8) or delete (127) character. This corresponds to the DECBKM control sequence. The default (backspace) is ``true.'' Pressing the control key toggles this behavior.
+XTerm.vt100.backarrowKey: false
+! Specifies the number of lines to save beyond the top of the screen when a scrollbar is turned on. The default is 64.
+XTerm.vt100.saveLines: 10000
+! Normally, selected text is stored in PRIMARY, to be pasted with Shift+Insert or by using the middle mouse button. By toggling this option to on selected text will use CLIPBOARD, allowing you to paste the text selected in an XTerm window into a GUI application using Ctrl+v
+XTerm.vt100.selectToClipboard: true
+! Specifies whether or not synthetic key and button events (generated using the X protocol SendEvent request) should be interpreted or discarded
+! XTerm.vt100.allowSendEvents:true
+! Specifies whether or not the shell to be run in the window should be started as a login shell. The default is ``false.''
+XTerm.vt100.loginShell: true
+! Specifies whether to print graphic attributes along with the text
+XTerm.vt100.printAttributes: 0
+! Defines printerCommand, pass terminal output a new XTerm
+XTerm.vt100.printerCommand: xterm -T History -e sh -c 'vimpager --no-passthrough <&3' 3<&0
+! 1) Call printer command on Alt + P 2) [Experimental] Open selected link
+XTerm.vt100.translations: #override Meta <KeyPress> P: print-everything()
+! Tells XTerm to construct an escape sequence for ordinary (i.e.,  “other”) keys (such as “2”) when modified by Shift-, Control-, Alt- or Meta-modifiers.
+!XTerm.vt100.modifyOtherKeys: 2
+! Experimental (Not thoroughly tested)
+! Defines groups of character codes that should be selected (when double-clicking) together: startchar[-endchar]:class 
+! Default value: 0:32,1-8:1,9:32,10-31:1,49-57:48,65-90:48,95:48,97-122:48,127-159:1,160:32,192-214:48,216-255:48
+XTerm.vt100.charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+! a character combined with the Meta modifier key are converted into a two-character sequence with the character itself  preceded  by  ESC 
+! Without this, alt+delete key produces ÿ (on en_US) instead of removing next char
+XTerm.vt100.metaSendsEscape: true
+! Experimental, the goal is to keep scroll at the same position even after resizing window
+XTerm.vt100.scrollTtyOutput: false
+XTerm.vt100.scrollKey: true
+

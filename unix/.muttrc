@@ -1,0 +1,46 @@
+source ~/.mutt/dracula.muttrc
+# /usr/share/doc/mutt/samples/gpg.rc
+source ~/.mutt/gpg.rc
+# Folder hooks
+folder-hook '' 'source ~/.mutt//muttrc'
+folder-hook '' 'source ~/.mutt//muttrc'
+
+# Macros for switching accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt//muttrc<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt//muttrc<enter><change-folder>!<enter>'
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro pager A |'abook --add-email'\n
+macro index,pager A \
+  "<pipe-message>khard add-email<return>" \
+  "add the sender email address to khard"
+
+# Auto-complete email addresses by pushing tab
+bind editor <Tab> complete-query
+# Search back
+bind index N search-opposite
+
+# default account
+source ~/.mutt//muttrc
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set sidebar_visible=no
+set sort = reverse-date-received
+set sort_aux = reverse-last-date-received
+set imap_check_subscribed="yes"
+set imap_list_subscribed="yes"
+set timeout=15
+set imap_keepalive=180
+set imap_idle
+set editor = "vim"
+set mail_check=2 # seconds
+set mail_check_stats = yes
+set mail_check_stats_interval = 1
+set header_cache = ~/.cache/mutt
+set query_command = "khard email --parsable --search-in-source-files %s"
+
+auto_view text/html
+alternative_order text/plain text/html
+
+

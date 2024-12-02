@@ -1,0 +1,18 @@
+name: "test"
+
+on: push
+
+jobs:
+  test:
+    name: "Unit tests"
+    runs-on: "ubuntu-20.04"
+
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5
+
+      - name: npm ci
+        run: npm ci
+
+      - name: npm test
+        run: npm test

@@ -1,0 +1,50 @@
+name: "release"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v2
+
+      - name: npm ci
+        run: npm ci
+
+      - name: npm test
+        run: npm test
+
+      - name: Automatic release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.PAT_TOKEN }}"
+          prerelease: false
+
+      - name: Generate documentation
+        run: npm run generate-docs
+
+      - name: Push documentation
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: docs
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+
+      - name: Dispatch domodel-diary-web
+        run: 'curl -u "thoughtsunificator:${{secrets.PAT_TOKEN}}" -X POST  -H "Accept: application/vnd.github.v3+json"  https://api.github.com/repos/thoughtsunificator/domodel-diary-web/dispatches -d "{\"event_type\":\"build\"}"'
+
+      - name: Dispatch domodel-diary-extension
+        run: 'curl -u "thoughtsunificator:${{secrets.PAT_TOKEN}}" -X POST  -H "Accept: application/vnd.github.v3+json"  https://api.github.com/repos/thoughtsunificator/domodel-diary-extension/dispatches -d "{\"event_type\":\"build\"}"'

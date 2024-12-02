@@ -1,0 +1,28 @@
+name: Build and push to another branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: "ubuntu-20.04"
+    name: Build and Push
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5
+
+      - name: Install all dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Push
+        uses: s0/git-publish-subdir-action@92faf786f11dfa44fc366ac3eb274d193ca1af7e
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

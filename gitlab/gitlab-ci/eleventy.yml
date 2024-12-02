@@ -1,0 +1,13 @@
+image: node:lts
+stages:
+  - pages
+
+pages:
+  stage: pages
+  script:
+    - npm install
+    - npx @11ty/eleventy --input=. --output=public
+
+  artifacts:
+    paths:
+      - public
