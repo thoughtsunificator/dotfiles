@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+templates_path="$HOME/.i3/i3-resurrect/templates"
+
+template_name=$(ls -t "$templates_path" | dmenu -p Template -fn 'Hack Nerd Font-11'  -i | xargs)
+
+if [[ "$template_name" == "" ]]; then
+  echo "Invalid template"
+  exit 1
+fi
+
+template_path="$templates_path/$template_name"
+temp_folder="$(mktemp -d)"
+workspace_number=$(i3-msg -t get_workspaces   | jq '.[] | select(.focused==true).name'   | cut -d"\"" -f2)
+$template_path/prompt.sh "$template_path" "$temp_folder" "$workspace_number" && pipx run i3-resurrect restore -d "$temp_folder" -p current
+rm -rf "$temp_folder"
