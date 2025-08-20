@@ -29,7 +29,7 @@ set shortmess=at
 set encoding=UTF-8
 set wildmenu
 set wildmode=list:full:lastused
-set wildignore+=*/node_modules/*,_site,*/__pycache__/,*/venv/*,*/target/*,*/.vim$,\~$,*.log,*/.aux,*/.cls,*/.aux,*/.bbl,*/.blg,*/.fls,*/.fdb*/,*/.toc,*/.out,*/.glo,*/.log,*/.ist,*/.fdb_latexmk,*/dist/*,*/cache/*,*.png,*.jpg,*.gif,*.webp,*/dist/*,*.svg,*.png,package-lock.json
+set wildignore+=*/.git/*,*/node_modules/*,_site,*/__pycache__/,*/venv/*,*/target/*,*/.vim$,\~$,*.log,*/.aux,*/.cls,*/.aux,*/.bbl,*/.blg,*/.fls,*/.fdb*/,*/.toc,*/.out,*/.glo,*/.log,*/.ist,*/.fdb_latexmk,*/dist/*,*/cache/*,*.png,*.jpg,*.gif,*.webp,*/dist/*,*.svg,*.png,package-lock.json
 " Experimental
 " Persistent undo
 set undofile
@@ -39,6 +39,8 @@ set number
 set relativenumber
 
 let g:fzf_layout = { 'window': { 'height': 1, 'width': 1 }}
+let g:fzf_vim = {}
+let g:fzf_vim.commands_expect = 'alt-enter,ctrl-x,enter'
 
 " Always show status line
 set laststatus=2
@@ -55,6 +57,7 @@ set statusline+=\%{getcwd()}\  " CWD
 " Experimental
 " Clear highlights by pressing Escape
 map <esc> :noh <CR>
+" Remove mapping for some keys
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -67,6 +70,9 @@ imap <left> <nop>
 imap <right> <nop>
 imap <Del> <nop>
 imap <BS> <nop>
+" Fzf Ag
+"map <C-S> :Commands <CR>
+map <C-S> :Ag <CR>
 " reselect pasted text
 nnoremap gp `[v`]
 " Auto save on FocusLost (only works for certain terminals see :help FocusLost)
