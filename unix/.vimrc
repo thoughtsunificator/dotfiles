@@ -41,6 +41,7 @@ set relativenumber
 let g:fzf_layout = { 'window': { 'height': 1, 'width': 1 }}
 let g:fzf_vim = {}
 let g:fzf_vim.commands_expect = 'alt-enter,ctrl-x,enter'
+let g:fzf_vim.grep_multi_line = 1
 
 " Always show status line
 set laststatus=2
@@ -97,3 +98,4 @@ if !exists('g:less')
   let g:less     = {}
 endif
 let g:less.enabled = 0
+
